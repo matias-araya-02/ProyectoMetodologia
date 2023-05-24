@@ -24,6 +24,7 @@ Aun **NO! **es necesario **Clonar** o **Descargar** el repositorio ya que todav�
 
 # 2. Crear ambiente (Anaconda) 🐍
 ![](https://o.remove.bg/downloads/03d59b4b-97f1-4b6e-ac20-1252fd7c7ae4/kisspng-anaconda-pip-installation-python-5be51c73cb3bb1.4617931315417416838325-removebg-preview.png)
+
 Para tener en orden nuestras paqueterías de Python primero vamos a crear un ambiente a través de la terminal con el nombre que ustedes deseen, por ejemplo: "deteccionobjetos"el cual tiene la versión 3.6 de Python.
 ``` 
 conda create -n deteccionobjetos python=3.6
