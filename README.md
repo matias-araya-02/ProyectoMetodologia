@@ -32,7 +32,7 @@ conda create -n deteccionobjetos python=3.6
 
 Una vez creado, activamos el ambiente **deteccionobjetos** para asegurarnos que estemos en el ambiente correcto al momento de hacer la instalación de todas las paqueterías necesarias.
 ```
-source activate deteccionobjos
+source activate deteccionobjetos
 ```
 
 # 3. Instalación de las paqueterias  📚
