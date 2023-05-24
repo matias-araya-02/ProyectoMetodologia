@@ -19,7 +19,7 @@ Por default este modelo esta pre entrenado para detecta 80 distintos objetos, la
 
 Los pasos a seguir para poder correr detección de objetos en el video o de una webcam son los siguientes (Previamente tiene que tener instalado [Anaconda](https://linuxhint.com/install-anaconda-ubuntu-22-04/) y [OpenCV](https://geekytheory.com/opencv-en-linux/)):
 
-# 1. Clonar o Descargar el Proyecto (Aviso importante ‼️)
+# 1. Clonar o Descargar el Proyecto (Aviso importante‼️)
 Aun **NO! **es necesario **Clonar** o **Descargar** el repositorio ya que todavía está en desarrollo. Una vez finalizado... se colocarán las correspondientes direcciones para clonar o descargar.
 
 # 2. Crear ambiente (Anaconda) 🐍
