@@ -1,4 +1,4 @@
-# Deteccion de objetos en video 💻
+# Detección de objetos en video 💻
 
 El propósito de este proyecto es implementar un sistema de detección de objetos utilizando el lenguaje de programación [Python](https://www.python.org) ya que se ha convertido en uno de los lenguajes de programación más populares en el ámbito de la inteligencia artificial y el aprendizaje automático debido a su simplicidad, versatilidad y una amplia gama de bibliotecas especializadas disponibles, y la arquitectura [YOLO](https://pjreddie.com/darknet/yolo/)  (*You Only Look Once*) junto con [PyTorch](https://pytorch.org) que es una poderosa biblioteca de aprendizaje automático que proporciona herramientas para construir y entrenar redes neuronales de manera eficiente.
 
@@ -23,7 +23,7 @@ Los pasos a seguir para poder correr detección de objetos en el video o de una 
 Aun **NO!** es necesario **Clonar** o **Descargar** el repositorio ya que todavía está en desarrollo. Una vez finalizado... se colocarán las correspondientes direcciones para clonar o descargar.
 
 # 2. Crear ambiente (Anaconda) 🐍
-![](https://o.remove.bg/downloads/03d59b4b-97f1-4b6e-ac20-1252fd7c7ae4/kisspng-anaconda-pip-installation-python-5be51c73cb3bb1.4617931315417416838325-removebg-preview.png)
+![](https://o.remove.bg/downloads/8e7b84f1-7d68-4951-a992-9c7541e6abaf/Anaconda_ForTrademark_HorizontalLarge_white-removebg-preview.png)
 
 Para tener en orden nuestras paqueterías de Python primero vamos a crear un ambiente a través de la terminal con el nombre que ustedes deseen, por ejemplo: "deteccionobjetos"el cual tiene la versión 3.6 de Python.
 ``` 
