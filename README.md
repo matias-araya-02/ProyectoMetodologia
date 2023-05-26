@@ -23,7 +23,7 @@ Los pasos a seguir para poder correr detección de objetos en el video o de una 
 Aun **NO!** es necesario **Clonar** o **Descargar** el repositorio ya que todavía está en desarrollo. Una vez finalizado... se colocarán las correspondientes direcciones para clonar o descargar.
 
 # 2. Crear ambiente (Anaconda) 🐍
-![](https://o.remove.bg/downloads/8e7b84f1-7d68-4951-a992-9c7541e6abaf/Anaconda_ForTrademark_HorizontalLarge_white-removebg-preview.png)
+![](https://o.remove.bg/downloads/bea0d4bf-b73f-426b-8847-190103c64e7d/241-2413548_logo-anaconda-python-hd-png-download-removebg-preview.png)
 
 Para tener en orden nuestras paqueterías de Python primero vamos a crear un ambiente a través de la terminal con el nombre que ustedes deseen, por ejemplo: "deteccionobjetos"el cual tiene la versión 3.6 de Python.
 ``` 
