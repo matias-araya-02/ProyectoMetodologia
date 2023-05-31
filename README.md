@@ -13,7 +13,7 @@ Como dijimos previamente, utilizaremos  [Python](https://www.python.org) y [PyTo
 
 # 🚨 AVISO 🚨
 
-Tanto el entrenamiento como predicciones con este modelo se ven beneficiadas si se cumple con una computadora que tenga una GPU NVIDIA.
+Las predicciones con este modelo se ven beneficiadas si se cumple con una computadora que tenga una GPU NVIDIA.
 
 Por default este modelo esta pre entrenado para detecta 80 distintos objetos, la lista de estos se encuentra en el archivo [data/coco.names](https://github.com/puigalex/deteccion-objetos-video/blob/master/data/coco.names)
 
