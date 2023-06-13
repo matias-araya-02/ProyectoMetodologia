@@ -17,7 +17,31 @@ Las predicciones con este modelo se ven beneficiadas si se cumple con una comput
 
 Por default este modelo esta pre entrenado para detecta 80 distintos objetos, la lista de estos se encuentra en el archivo [data/coco.names](https://github.com/puigalex/deteccion-objetos-video/blob/master/data/coco.names)
 
-Los pasos a seguir para poder correr detección de objetos en el video o de una webcam son los siguientes (Previamente tiene que tener instalado [Anaconda](https://linuxhint.com/install-anaconda-ubuntu-22-04/) y [OpenCV](https://geekytheory.com/opencv-en-linux/)):
+Previamente tiene que tener instalado [Anaconda](https://www.anaconda.com) y [OpenCV](https://opencv.org).
+
+Le sugerimos los siguientes foros y video de como hacer una correcta instalación: 
+
+**Anaconda** 🐍
+
+Video:
+``` 
+https://www.youtube.com/watch?v=QJsyqy0eKBE&t=298s
+```
+Sitio Web:
+``` 
+https://linuxhint.com/install-anaconda-ubuntu-22-04/
+```
+
+**OpenCV** 🟢🔴🔵
+
+Sitio Web:
+``` 
+https://geekytheory.com/opencv-en-linux/
+```
+
+
+Los pasos a seguir para poder correr detección de objetos en el video o de una webcam son los siguientes: 
+
 
 # 1. Clonar o Descargar el Proyecto (Aviso importante‼️)
 Aun **NO!** es necesario **Clonar** o **Descargar** el repositorio ya que todavía está en desarrollo. Una vez finalizado... se colocarán las correspondientes direcciones para clonar o descargar.
