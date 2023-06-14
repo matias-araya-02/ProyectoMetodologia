@@ -15,7 +15,7 @@ Como dijimos previamente, utilizaremos  [Python](https://www.python.org) y [PyTo
 
 Las predicciones con este modelo se ven beneficiadas si se cumple con una computadora que tenga una GPU NVIDIA.
 
-Por default este modelo esta pre entrenado para detecta 80 distintos objetos, la lista de estos se encuentra en el archivo [data/coco.names](https://github.com/puigalex/deteccion-objetos-video/blob/master/data/coco.names)
+Por default este modelo esta pre entrenado para detecta 80 objetos distintos, la lista de estos se encuentra en el archivo [data/coco.names](https://github.com/puigalex/deteccion-objetos-video/blob/master/data/coco.names)
 
 Previamente tiene que tener instalado [Anaconda](https://www.anaconda.com) y [OpenCV](https://opencv.org).
 
@@ -97,7 +97,7 @@ python deteccion_video.py
 
 ## IMPORTANTE ‼️
 
-En la carpeta **Video-Transito** se muestra videos de ejemplo, pero ustedes pueden descargar el video que deseen y de igual forma servirá (formato **MP4**). Eso si, tienen que colocar dicho video dentro de la carpeta **Deteccion-Objetos**.
+En la carpeta **Video-Transito** se muestran videos de ejemplo, pero ustedes pueden descargar el video que deseen y de igual forma servirá (formato **MP4**). Eso si, tienen que colocar dicho video dentro de la carpeta **Deteccion-Objetos**.
 
 Si en vez de correr detección de objetos sobre la webcam lo que quieres es correr el modelo sobre un video ya pre grabado **(video.mp4)**, tienes que cambiar el comando para correr el codigo a:
 ```
