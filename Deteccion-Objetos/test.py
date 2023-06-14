@@ -23,7 +23,7 @@ import torch.optim as optim
 def evaluate(model, path, iou_thres, conf_thres, nms_thres, img_size, batch_size):
     model.eval()
 
-    # Get dataloader
+    # Obtener dataloader
     dataset = ListDataset(path, img_size=img_size, augment=False, multiscale=False)
     dataloader = torch.utils.data.DataLoader(
         dataset, batch_size=batch_size, shuffle=False, num_workers=1, collate_fn=dataset.collate_fn
@@ -32,10 +32,10 @@ def evaluate(model, path, iou_thres, conf_thres, nms_thres, img_size, batch_size
     Tensor = torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor
 
     labels = []
-    sample_metrics = []  # List of tuples (TP, confs, pred)
+    sample_metrics = []  # Lista de tuplas (TP, confs, pred)
     for batch_i, (_, imgs, targets) in enumerate(tqdm.tqdm(dataloader, desc="Detecting objects")):
 
-        # Extract labels
+        # Extraer labels
         labels += targets[:, 1].tolist()
         # Rescale target
         targets[:, 2:] = xywh2xyxy(targets[:, 2:])
@@ -49,7 +49,7 @@ def evaluate(model, path, iou_thres, conf_thres, nms_thres, img_size, batch_size
 
         sample_metrics += get_batch_statistics(outputs, targets, iou_threshold=iou_thres)
 
-    # Concatenate sample statistics
+    # Concatenar estadísticas de muestra
     true_positives, pred_scores, pred_labels = [np.concatenate(x, 0) for x in list(zip(*sample_metrics))]
     precision, recall, AP, f1, ap_class = ap_per_class(true_positives, pred_scores, pred_labels, labels)
 
@@ -77,13 +77,13 @@ if __name__ == "__main__":
     valid_path = data_config["valid"]
     class_names = load_classes(data_config["names"])
 
-    # Initiate model
+    # Iniciar modelo
     model = Darknet(opt.model_def).to(device)
     if opt.weights_path.endswith(".weights"):
-        # Load darknet weights
+        # Cargar darknet weights
         model.load_darknet_weights(opt.weights_path)
     else:
-        # Load checkpoint weights
+        # Cargar checkpoint weights
         model.load_state_dict(torch.load(opt.weights_path))
 
     print("Compute mAP...")

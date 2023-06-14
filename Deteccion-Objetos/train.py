@@ -46,24 +46,24 @@ if __name__ == "__main__":
     os.makedirs("output", exist_ok=True)
     os.makedirs("checkpoints", exist_ok=True)
 
-    # Get data configuration
+    # Obtener configuración de datos
     data_config = parse_data_config(opt.data_config)
     train_path = data_config["train"]
     valid_path = data_config["valid"]
     class_names = load_classes(data_config["names"])
 
-    # Initiate model
+    # Iniciar modelo
     model = Darknet(opt.model_def).to(device)
     model.apply(weights_init_normal)
 
-    # If specified we start from checkpoint
+    # Si se especifica, comenzamos desde el punto de control.
     if opt.pretrained_weights:
         if opt.pretrained_weights.endswith(".pth"):
             model.load_state_dict(torch.load(opt.pretrained_weights))
         else:
             model.load_darknet_weights(opt.pretrained_weights)
 
-    # Get dataloader
+    # Obtener cargador de datos
     dataset = ListDataset(train_path, augment=True, multiscale=opt.multiscale_training)
     dataloader = torch.utils.data.DataLoader(
         dataset,
@@ -106,19 +106,19 @@ if __name__ == "__main__":
             loss.backward()
 
             if batches_done % opt.gradient_accumulations:
-                # Accumulates gradient before each step
+                # Acumula gradiente antes de cada paso
                 optimizer.step()
                 optimizer.zero_grad()
 
             # ----------------
-            #   Log progress
+            #  Registrar progreso
             # ----------------
 
             log_str = "\n---- [Epoch %d/%d, Batch %d/%d] ----\n" % (epoch, opt.epochs, batch_i, len(dataloader))
 
             metric_table = [["Metrics", *[f"YOLO Layer {i}" for i in range(len(model.yolo_layers))]]]
 
-            # Log metrics at each YOLO layer
+            # Registra métricas en cada capa de YOLO
             for i, metric in enumerate(metrics):
                 formats = {m: "%.6f" for m in metrics}
                 formats["grid_size"] = "%2d"
@@ -126,7 +126,7 @@ if __name__ == "__main__":
                 row_metrics = [formats[metric] % yolo.metrics.get(metric, 0) for yolo in model.yolo_layers]
                 metric_table += [[metric, *row_metrics]]
 
-                # Tensorboard logging
+                # registro de tensorboard
                 tensorboard_log = []
                 for j, yolo in enumerate(model.yolo_layers):
                     for name, metric in yolo.metrics.items():
@@ -138,7 +138,7 @@ if __name__ == "__main__":
             log_str += AsciiTable(metric_table).table
             log_str += f"\nTotal loss {loss.item()}"
 
-            # Determine approximate time left for epoch
+            # Determinar el tiempo aproximado que queda para la época
             epoch_batches_left = len(dataloader) - (batch_i + 1)
             time_left = datetime.timedelta(seconds=epoch_batches_left * (time.time() - start_time) / (batch_i + 1))
             log_str += f"\n---- ETA {time_left}"
@@ -149,7 +149,7 @@ if __name__ == "__main__":
 
         if epoch % opt.evaluation_interval == 1:
             print("\n---- Evaluating Model ----")
-            # Evaluate the model on the validation set
+            # Evaluar el modelo en el conjunto de validación
             precision, recall, AP, f1, ap_class = evaluate(
                 model,
                 path=valid_path,
@@ -167,7 +167,7 @@ if __name__ == "__main__":
             ]
             logger.list_of_scalars_summary(evaluation_metrics, epoch)
 
-            # Print class APs and mAP
+            # Imprima APs de clase y mAp
             ap_table = [["Index", "Class name", "AP"]]
             for i, c in enumerate(ap_class):
                 ap_table += [[c, class_names[c], "%.5f" % AP[i]]]

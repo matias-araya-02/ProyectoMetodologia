@@ -40,17 +40,17 @@ if __name__ == "__main__":
 
     os.makedirs("output", exist_ok=True)
 
-    # Set up model 
+    # Configurar modelo
     model = Darknet(opt.model_def, img_size=opt.img_size).to(device)
 
     if opt.weights_path.endswith(".weights"):
-        # Load darknet weights
+        # Cargar darknet weights
         model.load_darknet_weights(opt.weights_path)
     else:
-        # Load checkpoint weights
+        # Cargar checkpoint weights
         model.load_state_dict(torch.load(opt.weights_path))
 
-    model.eval()  # Set in evaluation mode
+    model.eval()  # Establecer en modo de evaluación
 
     dataloader = DataLoader(
         ImageFolder(opt.image_folder, img_size=opt.img_size),
@@ -59,55 +59,55 @@ if __name__ == "__main__":
         num_workers=opt.n_cpu,
     )
 
-    classes = load_classes(opt.class_path)  # Extracts class labels from file
+    classes = load_classes(opt.class_path)  # Extrae etiquetas de clase del archivo
 
     Tensor = torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor
 
-    imgs = []  # Stores image paths
-    img_detections = []  # Stores detections for each image index
+    imgs = []  # Almacena rutas de imagen
+    img_detections = []  # Almacena detecciones para cada índice de imagen
 
     print("\nPerforming object detection:")
     prev_time = time.time()
     for batch_i, (img_paths, input_imgs) in enumerate(dataloader):
-        # Configure input
+        # Configurar entrada
         print("INPUT_IMGS-----", input_imgs)
         input_imgs = Variable(input_imgs.type(Tensor))
         
 
-        # Get detections
+        # Obtener detecciones
         with torch.no_grad():
             detections = model(input_imgs)
             detections = non_max_suppression(detections, opt.conf_thres, opt.nms_thres)
 
-        # Log progress
+        # Registrar progreso
         current_time = time.time()
         inference_time = datetime.timedelta(seconds=current_time - prev_time)
         prev_time = current_time
         print("\t+ Batch %d, Inference Time: %s" % (batch_i, inference_time))
 
-        # Save image and detections
+        # Guardar imagen y detecciones
         imgs.extend(img_paths)
         img_detections.extend(detections)
 
-    # Bounding-box colors
+    # Colores del cuadro delimitador
     cmap = plt.get_cmap("tab20b")
     colors = [cmap(i) for i in np.linspace(0, 1, 20)]
 
     print("\nSaving images:")
-    # Iterate through images and save plot of detections
+    # Iterar a través de imágenes y guardar gráficos de detecciones
     for img_i, (path, detections) in enumerate(zip(imgs, img_detections)):
 
         print("(%d) Image: '%s'" % (img_i, path))
 
-        # Create plot
+        # Crear plot
         img = np.array(Image.open(path))
         plt.figure()
         fig, ax = plt.subplots(1)
         ax.imshow(img)
 
-        # Draw bounding boxes and labels of detections
+        # Dibujar cuadros delimitadores y etiquetas de detecciones
         if detections is not None:
-            # Rescale boxes to original image
+            # Cambiar la escala de las cajas a la imagen original
             detections = rescale_boxes(detections, opt.img_size, img.shape[:2])
             unique_labels = detections[:, -1].cpu().unique()
             n_cls_preds = len(unique_labels)
@@ -120,11 +120,11 @@ if __name__ == "__main__":
                 box_h = y2 - y1
 
                 color = bbox_colors[int(np.where(unique_labels == int(cls_pred))[0])]
-                # Create a Rectangle patch
+                # Crear un parche rectangular
                 bbox = patches.Rectangle((x1, y1), box_w, box_h, linewidth=2, edgecolor=color, facecolor="none")
-                # Add the bbox to the plot
+                # Agregue el bbox al plot
                 ax.add_patch(bbox)
-                # Add label
+                # Añadir etiqueta
                 plt.text(
                     x1,
                     y1,
@@ -134,7 +134,7 @@ if __name__ == "__main__":
                     bbox={"color": color, "pad": 0},
                 )
 
-        # Save generated image with detections
+        # Guardar imagen generada con detecciones
         plt.axis("off")
         plt.gca().xaxis.set_major_locator(NullLocator())
         plt.gca().yaxis.set_major_locator(NullLocator())
