@@ -77,7 +77,9 @@ Estando dentro de nuestro ambiente vamos a instalar todas las paqueterías neces
 pip install -r requirements.txt
 ```
 # 4. Descargar los pesos del modelo entrenado (YOLO) 🔎🧠
-![](https://assets.website-files.com/5f6bc60e665f54db361e52a9/5f6bc60e665f546a6b1e5400_logo_yolo.png)Para poder correr el modelo de YOLO tendremos que descargar los pesos de la red neuronal, los pesos son los valores que tienen todas las conexiones entre las neuronas de la red neuronal de YOLO, este tipo de modelos son muy pesados de entrenar desde cero por lo cual descargar el modelo pre entrenado será la mejor opción.
+![](https://assets.website-files.com/5f6bc60e665f54db361e52a9/5f6bc60e665f546a6b1e5400_logo_yolo.png) 
+
+Para poder correr el modelo de YOLO tendremos que descargar los pesos de la red neuronal, este tipo de modelos son muy pesados de entrenar desde cero por lo cual descargar el modelo pre entrenado será la mejor opción.
 ```
 bash weights/download_weights.sh
 ```
@@ -95,7 +97,7 @@ python deteccion_video.py
 
 ## IMPORTANTE ‼️
 
-En la carpeta **Video-Transito** se muestra un ejemplo de video, pero ustedes pueden descargar el video que deseen y de ingual forma servirá (formato **MP4**). Eso si, tienen que colocar dicho video dentro de la carpeta **Deteccion-Objetos**.
+En la carpeta **Video-Transito** se muestra videos de ejemplo, pero ustedes pueden descargar el video que deseen y de igual forma servirá (formato **MP4**). Eso si, tienen que colocar dicho video dentro de la carpeta **Deteccion-Objetos**.
 
 Si en vez de correr detección de objetos sobre la webcam lo que quieres es correr el modelo sobre un video ya pre grabado **(video.mp4)**, tienes que cambiar el comando para correr el codigo a:
 ```
