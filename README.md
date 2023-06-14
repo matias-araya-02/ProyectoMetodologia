@@ -19,7 +19,7 @@ Por default este modelo esta pre entrenado para detecta 80 objetos distintos, la
 
 Previamente tiene que tener instalado [Anaconda](https://www.anaconda.com) y [OpenCV](https://opencv.org).
 
-Le sugerimos los siguientes foros y video de como hacer una correcta instalación: 
+Le sugerimos los siguientes Sitios Webs y video de como hacer una correcta instalación: 
 
 **Anaconda** 🐍
 
@@ -60,7 +60,7 @@ Es decir, a través de la terminal de dicha carpeta.
 
 ![](https://microchip.wdfiles.com/local--files/swtools:anaconda/anaconda_logo.png)
 
-Para tener en orden nuestras paqueterías de Python primero vamos a crear un ambiente en la terminal con el nombre que ustedes deseen, por ejemplo: "deteccionobjetos"el cual va a tener la versión 3.6 de Python.
+Para tener en orden nuestras paqueterías de Python primero tenemos que crear un ambiente en la terminal con el nombre que ustedes deseen, por ejemplo: "deteccionobjetos"el cual va a tener la versión 3.6 de Python.
 ``` 
 conda create -n deteccionobjetos python=3.6
 ```
