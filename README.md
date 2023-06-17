@@ -97,7 +97,7 @@ python deteccion_video.py
 
 ## IMPORTANTE ‼️
 
-En la carpeta **Video-Transito** se muestran videos de ejemplo, pero ustedes pueden descargar el video que deseen y de igual forma servirá (formato **MP4**). Eso si, tienen que colocar dicho video dentro de la carpeta **Deteccion-Objetos**.
+En la carpeta **Video-Transito** se muestran videos de ejemplo (en baja calidad debido a que no se puede subir videos de más de 100 Mb), pero ustedes pueden descargar el video que deseen y de igual forma servirá (formato **MP4**). Eso si, tienen que colocar dicho video dentro de la carpeta **Deteccion-Objetos**.
 
 Si en vez de correr detección de objetos sobre la webcam lo que quieres es correr el modelo sobre un video ya pre grabado **(video.mp4)**, tienes que cambiar el comando para correr el codigo a:
 ```
