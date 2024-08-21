@@ -54,8 +54,7 @@ https://github.com/matias-araya-02/ProyectoMetodologia.git
 
 **Ejemplo de descarga**
 
-[Descargar](https://raw.githubusercontent.com/matias-araya-02/ProyectoMetodologia/master/Bienvenidos!.txt)
-
+[Descargar](https://github.com/matias-araya-02/ProyectoMetodologia/archive/refs/heads/master.zip)
 ## IMPORTANTE ‼️
 
 Una vez **Clonado** o **Descargado** el Respositorio... deberá realizar los pasos que vienen a continuación dentro de la carpeta de **Deteccion-Objetos**. 
