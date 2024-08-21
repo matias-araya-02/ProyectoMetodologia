@@ -52,7 +52,7 @@ Para **Clonar** el repositorio simplmente puede ir a la pestaña que sale en col
 https://github.com/matias-araya-02/ProyectoMetodologia.git
 ```
 
-**Ejemplo de descarga**
+**Descargar Proyecto**
 
 [Descargar](https://github.com/matias-araya-02/ProyectoMetodologia/archive/refs/heads/master.zip)
 ## IMPORTANTE ‼️
