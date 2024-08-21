@@ -54,7 +54,7 @@ https://github.com/matias-araya-02/ProyectoMetodologia.git
 
 **Ejemplo de descarga**
 
-[Descargar](https://github.com/matias-araya-02/ProyectoMetodologia.zip)
+[Descargar](https://raw.githubusercontent.com/matias-araya-02/ProyectoMetodologia/master/Bienvenidos!.txt)
 
 ## IMPORTANTE ‼️
 
