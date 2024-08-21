@@ -47,9 +47,14 @@ Los pasos a seguir para poder correr detección de objetos en el video o de una 
 
 Para **Clonar** el repositorio simplmente puede ir a la pestaña que sale en color "Verde" (🟢<> Code🟢) y copiar el HTTPS o **Descargar**.
 
+**Enlace**
 ``` 
 https://github.com/matias-araya-02/ProyectoMetodologia.git
 ```
+
+**Descarga Directa**
+
+[Descargar](https://github.com/matias-araya-02/ProyectoMetodologia.git)
 
 ## IMPORTANTE ‼️
 
